@@ -21,7 +21,7 @@ set(MeTA_VERSION
 if (NOT (MSVC_VERSION AND CMAKE_COMPILER_ID MATCHES "Clang"))
   # MeTA only requires C++11, but on all of our supported compilers at least
   # C++1y support exists, so we therefore set the standard to 14
-  set(CMAKE_CXX_STANDARD 14)
+  set(CMAKE_CXX_STANDARD 17)
   set(CMAKE_CXX_STANDARD_REQUIRED ON)
   set(CMAKE_CXX_EXTENSIONS OFF)
 endif()
@@ -62,9 +62,9 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/deps/findicu)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/deps/meta-cmake/)
 
 FindOrBuildICU(
-  VERSION 61.1
-  URL http://download.icu-project.org/files/icu4c/61.1/icu4c-61_1-src.tgz
-  URL_HASH MD5=68fe38999fef94d622bd6843d43c0615
+  VERSION 63.1
+  URL https://github.com/unicode-org/icu/releases/download/release-63-1/icu4c-63_1-src.tgz
+  URL_HASH SHA512=9ab407ed840a00cdda7470dcc4c40299a125ad246ae4d019c4b1ede54781157fd63af015a8228cd95dbc47e4d15a0932b2c657489046a19788e5e8266eac079c
 )
 
 add_library(meta-definitions INTERFACE)
